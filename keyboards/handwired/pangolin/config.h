@@ -24,33 +24,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x0000
 #define DEVICE_VER   0x0001
 #define MANUFACTURER KeyPCB
-#define PRODUCT      bat
+#define PRODUCT      Pangolin
 
 /* key matrix size */
 #define MATRIX_ROWS 2
-#define MATRIX_COLS 3
+#define MATRIX_COLS 4
 
-/*
- * Keyboard Matrix Assignments
- *
- * Change this to how you wired your keyboard
- * COLS: AVR pins used for columns, left to right
- * ROWS: AVR pins used for rows, top to bottom
- * DIODE_DIRECTION: COL2ROW = COL = Anode (+), ROW = Cathode (-, marked on diode)
- *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
- *
- */
-#define MATRIX_ROW_PINS { D0, D5 }
-#define MATRIX_COL_PINS { F1, F0, B0 }
-#define UNUSED_PINS
-
-/* COL2ROW, ROW2COL */
-#define DIODE_DIRECTION COL2ROW
+#define DIRECT_PINS { \
+    { F4, F5, F6, F7 }, \
+    { NO_PIN, B1, B3, B2 } \
+}
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
 #define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
+
+#define COMBO_TERM 40
+#define COMBO_ALLOW_ACTION_KEYS
+#define COMBO_VARIABLE_LEN
 
 //#define BACKLIGHT_PIN B7
 //#define BACKLIGHT_LEVELS 3
