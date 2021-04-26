@@ -45,7 +45,7 @@ enum layer_names {
 #define KB_F_RED KC_NO
 // KB_F_BLUE is same as KB_BLUE
 
-enum custom_keycodes {
+/*enum custom_keycodes {
     PAREN_SHIFT,
     KC_00,
     KC_000,
@@ -55,7 +55,7 @@ enum custom_keycodes {
     CCTRL,
     CGUI,
     CALT
-};
+};*/
 
 #include "g/keymap_combo.h"
 
@@ -77,10 +77,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-bool latchMode = false;
+/*bool latchMode = false;
 uint16_t latchedKey = 0;
 
 bool rightMode = false;
+
+void set_rgb_to_default(void);
+void set_rgb_to_default() {
+    if(latchMode) {
+        sethsv(HSV_YELLOW, (LED_TYPE *)&led[0]);
+    }
+    else if(rightMode) {
+        sethsv(HSV_RED, (LED_TYPE *)&led[0]);
+    }
+    else {
+        sethsv(0, 0, 0, (LED_TYPE *)&led[0]);
+    }
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch(get_highest_layer(state)) {
+        case _FUNCTION:
+            sethsv(HSV_BLUE, (LED_TYPE *)&led[0]);
+            break;
+        case _NUMBERS:
+            sethsv(HSV_GREEN, (LED_TYPE *)&led[0]);
+            break;
+        default: //  for any other layers, or the default layer
+            set_rgb_to_default();
+            break;
+    }
+    rgblight_set();
+    return state;
+}
 
 void process_mod_latch_support(uint16_t mod_left, uint16_t mod_right, bool keyPressed) {
     uint8_t result = rightMode ? mod_right : mod_left;
@@ -133,10 +162,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     latchedKey = 0;
                 }
                 latchMode = !latchMode;
+                set_rgb_to_default();
+                rgblight_set();
             }
             break;
         case RIGHT:
             rightMode = !rightMode;
+            set_rgb_to_default();
+            rgblight_set();
             break;
         case CCTRL:
             process_mod_latch_support(KC_LCTL, KC_RCTL, record->event.pressed);
@@ -151,3 +184,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     return true;
 }
+*/
