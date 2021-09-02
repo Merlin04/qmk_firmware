@@ -1,0 +1,8 @@
+VPATH               +=  keyboards/gboards/
+COMBO_ENABLE=yes
+TAP_DANCE_ENABLE = yes
+POINTING_DEVICE_ENABLE = yes
+SRC += pimoroni_trackball.c
+QUANTUM_LIB_SRC += i2c_master.c
+OLED_DRIVER_ENABLE = yes
+MOUSEKEY_ENABLE = yes
