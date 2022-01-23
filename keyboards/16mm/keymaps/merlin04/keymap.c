@@ -27,7 +27,7 @@
 
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
-#define MOUS 2 // mouse
+/*#define MOUS 2 // mouse
 
 enum custom_keycodes {
   BALL_HUI,//cycles hue
@@ -37,12 +37,12 @@ enum custom_keycodes {
   BALL_NCL,//left click
   BALL_RCL,//right click
   BALL_MCL,//middle click
-};
+};*/
 
 #include QMK_KEYBOARD_H
 #include "g/keymap_combo.h"
-#include "pimoroni_trackball.h"
-#include "pointing_device.h"
+//#include "pimoroni_trackball.h"
+//#include "pointing_device.h"
 
 // Tap dance
 
@@ -171,17 +171,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
         KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_CAPS, KC_LBRC, KC_RBRC, KC_BSLS,
-        KC_DEL, KC_TRNS, TG(MOUS), KC_TRNS
-    ),
+        KC_DEL, KC_TRNS, /* TG(MOUS) */ KC_TRNS, KC_TRNS
+    )/*,
     [MOUS] = LAYOUT(
         BALL_HUI, KC_NO, KC_NO, KC_NO, TG(MOUS), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         KC_LCTL, KC_LALT, KC_LGUI, KC_NO, KC_NO, KC_NO, KC_NO, KC_RGUI, KC_RALT, KC_RCTL,
         KC_LSFT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         BALL_SCR, KC_MS_BTN1, KC_MS_BTN2, KC_MS_BTN3
-    )
+    )*/
 };
 
-uint8_t white = 0;
+/*uint8_t white = 0;
 uint8_t red   = 255;
 uint8_t green = 0;
 uint8_t blue  = 0;
@@ -203,7 +203,7 @@ void ball_increase_hue(void) {
     } else if (green == 0 && blue > 0 && red == 255) {
         blue -= 15;
     }
-    trackball_set_rgbw(red, green, blue, white);
+    //trackball_set_rgbw(red, green, blue, white);
 }
 
 void decrease_color(void) {
@@ -216,7 +216,7 @@ void decrease_color(void) {
     if (blue > 0) {
         blue -= 15;
     }
-    trackball_set_rgbw(red, green, blue, white);
+    //trackball_set_rgbw(red, green, blue, white);
 }
 
 void cycle_white(void) {
@@ -225,7 +225,7 @@ void cycle_white(void) {
     } else {
         white = 0;
     }
-    trackball_set_rgbw(red, green, blue, white);
+    //trackball_set_rgbw(red, green, blue, white);
 }
 
 bool mousActive = false;
@@ -252,9 +252,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case BALL_SCR:
             if (record->event.pressed) {
-                trackball_set_scrolling(true);
+                //trackball_set_scrolling(true);
             } else {
-                trackball_set_scrolling(false);
+                //trackball_set_scrolling(false);
             }
             break;
 
@@ -269,7 +269,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
     return true;
-}
+}*/
 
 // More tap dance stuff
 #define DEFAULT_TAPPING_TERM 200
