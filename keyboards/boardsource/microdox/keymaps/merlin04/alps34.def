@@ -1,0 +1,11 @@
+COMB(qwGrv, KC_GRV, KC_Q, KC_W)
+COMB(zxTab, KC_TAB, KC_Z, KC_X)
+COMB(uyEqu, KC_EQL, KC_U, KC_Y)
+COMB(ySclnMins, KC_MINS, KC_Y, KC_SCLN)
+COMB(hnQuot, KC_QUOT, KC_H, KC_N)
+COMB(pgEsc, KC_ESC, KC_P, KC_G)
+
+COMB(kmHome, KC_HOME, KC_K, KC_M)
+COMB(mcommPgDn, KC_PGDN, KC_M, KC_COMM)
+COMB(commdotPgUp, KC_PGUP, KC_COMM, KC_DOT)
+COMB(dotslshEnd, KC_END, KC_DOT, KC_SLSH)
